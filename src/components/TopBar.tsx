@@ -1,15 +1,9 @@
 import store from "../store";
 
-function TopBar() {
+export default function TopBar() {
 	const onLoad = () => {
 		store.load("https://raw.githubusercontent.com/jherr/todos-four-ways/master/data/todos.json");
 	};
 
-	return (
-		<div>
-			<button onClick={onLoad}>Load</button>
-		</div>
-	);
+	return <button onClick={onLoad}>Load</button>;
 }
-
-export default TopBar;

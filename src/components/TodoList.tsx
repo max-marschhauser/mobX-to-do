@@ -7,7 +7,7 @@ function TodoListItems() {
 		<>
 			{store.todos.map((todo) => (
 				<div key={todo.id}>
-					<input type="checkbox" onClick={() => (todo.done = !todo.done)} checked={todo.done} />
+					<input type="checkbox" onClick={() => (todo.done = !todo.done)} defaultChecked={todo.done} />
 					<input type="text" value={todo.text} onChange={(evt) => (todo.text = evt.target.value)} />
 					<button
 						onClick={() => {
@@ -23,13 +23,6 @@ function TodoListItems() {
 
 const ObservedTodoListItems = observer(TodoListItems);
 
-function TodoList() {
-	return (
-		<>
-			<h1>Todo List</h1>
-			<ObservedTodoListItems />
-		</>
-	);
+export default function TodoList() {
+	return <ObservedTodoListItems />;
 }
-
-export default TodoList;
